@@ -8,6 +8,7 @@ const Projects = () => {
 
           <article className="project-card reveal">
             <div className="project-image" style={{ "--hue": 260 }}>
+              <img src="/invexis.png" alt="Invexis Project" />
               <div className="project-overlay">
                 <a href="https://invexissystem.vercel.app/" target="_blank" rel="noopener noreferrer" className="project-link" aria-label="Live Demo">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -35,6 +36,7 @@ const Projects = () => {
 
           <article className="project-card reveal">
             <div className="project-image" style={{ "--hue": 200 }}>
+              <img src="/lung-cancer.png" alt="Lung Cancer Classification Project" />
               <div className="project-overlay">
                 <a href="https://github.com/Sazibul-Islam-Siam/Lung-Cancer-Classification" className="project-link" aria-label="GitHub Repository">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -57,6 +59,7 @@ const Projects = () => {
 
           <article className="project-card reveal">
             <div className="project-image" style={{ "--hue": 340 }}>
+              <img src="/churn.png" alt="Customer Churn Analysis Project" />
               <div className="project-overlay">
                 <a href="https://github.com/Sazibul-Islam-Siam/Customer_Churn_Prediction_using_ML" className="project-link" aria-label="GitHub Repository">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
