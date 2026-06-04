@@ -26,7 +26,7 @@ const Navbar = () => {
 
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`} id="navbar">
-
+      <a href="#" className="nav-logo"><span className="dot"></span></a>
       <div className="nav-right">
         <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
           <svg className="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
