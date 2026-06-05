@@ -5,7 +5,7 @@ const Research = () => {
         <h2 className="section-title reveal">Published <span className="accent">Research</span></h2>
         <p className="section-subtitle reveal">Peer-reviewed papers published in IEEE conferences</p>
         <div className="research-grid">
-          
+
           <article className="research-card reveal">
             <div className="research-badge">IEEE</div>
             <h3>An Explainable Hybrid Transformer-Based Lightweight Framework for Lung Cancer Classification</h3>
@@ -26,13 +26,14 @@ const Research = () => {
 
           <article className="research-card reveal">
             <div className="research-badge">IEEE</div>
-            <h3>A Supervised Machine Learning Approach to Estimate and Evaluate Soil Fertility</h3>
-            <p className="research-venue">ICCCNT 2026 — 15th International Conference on Computing Communication and Networking Technologies</p>
-            <p className="research-authors">Sazibul Islam Siam, Md. Saiful Islam</p>
+            <h3>Interpretable Diabetic Retinopathy Detection and Grading Using EfficientNet-ViT Hybrid Architecture With Visual Lesion-Level Grad-CAM Analysis</h3>
+            <p className="research-venue">ICECTE 2026 — 5th International Conference on Electrical, Computer & Telecommunication Engineering</p>
+            <p className="research-authors">Muradul Islam, Marisa Parvez Oishy, Ferdaus Anam Jibon, Sazibul Islam Siam, Md. Abdullah Ibne Aziz</p>
             <div className="research-meta">
               <span className="research-tag">Machine Learning</span>
-              <span className="research-tag">Agriculture</span>
+              <span className="research-tag">Health</span>
               <span className="research-tag">Data Analysis</span>
+              <span className="research-tag">Computer Vision</span>
             </div>
             <a href="https://ieeexplore.ieee.org/document/11429403" target="_blank" rel="noopener noreferrer" className="research-link">
               View Publication
@@ -77,7 +78,7 @@ const Research = () => {
               </svg>
             </a>
           </article>
-          
+
         </div>
       </div>
     </section>
