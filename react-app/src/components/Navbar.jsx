@@ -1,9 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark');
+  const [activeSection, setActiveSection] = useState('');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -11,6 +12,24 @@ const Navbar = () => {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Active section detection
+  useEffect(() => {
+    const sections = document.querySelectorAll('section[id]');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.3, rootMargin: '-80px 0px -50% 0px' }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
   }, []);
 
   const toggleTheme = () => {
@@ -24,9 +43,33 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const navItems = [
+    { href: '#about', label: 'About' },
+    { href: '#skills', label: 'Skills' },
+    { href: '#research', label: 'Research' },
+    { href: '#projects', label: 'Projects' },
+    { href: '#contact', label: 'Contact' },
+  ];
+
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`} id="navbar">
-      <a href="#" className="nav-logo"><span className="dot"></span></a>
+      <a href="#" className="nav-logo">
+        <span className="logo-text">Siam</span>
+        <span className="logo-dot">.</span>
+      </a>
+      <ul className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
+        {navItems.map((item) => (
+          <li key={item.href}>
+            <a
+              href={item.href}
+              className={activeSection === item.href.slice(1) ? 'active' : ''}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
       <div className="nav-right">
         <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
           <svg className="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -41,13 +84,6 @@ const Navbar = () => {
           <span></span><span></span><span></span>
         </button>
       </div>
-      <ul className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
-        <li><a href="#about" onClick={() => setIsMenuOpen(false)}>About</a></li>
-        <li><a href="#skills" onClick={() => setIsMenuOpen(false)}>Skills</a></li>
-        <li><a href="#research" onClick={() => setIsMenuOpen(false)}>Research</a></li>
-        <li><a href="#projects" onClick={() => setIsMenuOpen(false)}>Projects</a></li>
-        <li><a href="#contact" onClick={() => setIsMenuOpen(false)}>Contact</a></li>
-      </ul>
     </nav>
   );
 };
