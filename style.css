@@ -406,32 +406,6 @@ h1, h2, h3, h4 {
     transform: translateY(-2px);
 }
 
-/* Scroll indicator */
-.scroll-indicator {
-    position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
-}
-
-.mouse {
-    width: 26px;
-    height: 40px;
-    border: 2px solid var(--text-muted);
-    border-radius: 13px;
-    display: flex;
-    justify-content: center;
-    padding-top: 8px;
-}
-
-.wheel {
-    width: 3px;
-    height: 8px;
-    background: var(--accent);
-    border-radius: 3px;
-    animation: scroll-wheel 2s ease-in-out infinite;
-}
 
 /* ═══════════════════════════════════════════════
    SECTIONS (shared)
@@ -1066,10 +1040,6 @@ h1, h2, h3, h4 {
     50% { opacity: 0; }
 }
 
-@keyframes scroll-wheel {
-    0% { opacity: 1; transform: translateY(0); }
-    100% { opacity: 0; transform: translateY(8px); }
-}
 
 /* ═══════════════════════════════════════════════
    RESPONSIVE
