@@ -66,7 +66,7 @@ const Footer = () => {
 
           <div className="footer-bottom">
             <p>© {currentYear} Sazibul Islam Siam. Designed & built with passion.</p>
-            <p className="footer-tech">Built with React + Vite</p>
+
           </div>
         </div>
       </div>
